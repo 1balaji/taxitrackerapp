@@ -5,10 +5,10 @@ class Api::LogsController < ApplicationController
     User.transaction do
       params[:logs].each do |l|
         new_log = Log.new
-        new_log.lon = l[1][:lon]
-        new_log.lat = l[1][:lat]
-        new_log.logged_at = l[1][:logged_at]
-        new_log.user_id = user.id
+        new_log.lon = 1
+        new_log.lat = 1
+        new_log.logged_at = 1
+        new_log.user_id = 1
         user.logs << new_log
       end
       user.save!
