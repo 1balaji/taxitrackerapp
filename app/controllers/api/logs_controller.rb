@@ -2,7 +2,7 @@ class Api::LogsController < ApplicationController
 
   def logs
     user = User.find(params[:id])
-    if !user.nil
+    if !user
       User.transaction do
         params[:logs].each do |l|
           new_log = Log.new
